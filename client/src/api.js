@@ -4,6 +4,10 @@ const logRequests = process.env.NODE_ENV === 'development'
 
 let apiURL = `http://localhost:1337`
 
+if (process.env.NODE_ENV === 'production') {
+  apiURL = `${window.location.origin}`
+}
+
 
 const api = axios.create({
   baseURL: apiURL,
