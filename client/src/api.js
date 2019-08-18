@@ -64,11 +64,13 @@ const getCurrentArticle = (id) => fetch(`articles/${id}`)
 
 const getHeaderImage = () => fetch('headerimages/')
 
+const createAppointment = (appointment) => post('/appointments', appointment)
 
 export {
   getArticles,
   getSiteTitle,
   getCurrentArticle,
   apiURL,
-  getHeaderImage
+  getHeaderImage,
+  createAppointment
 }

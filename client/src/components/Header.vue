@@ -7,6 +7,7 @@
           <div class="site-heading">
             <h1>{{computeTitle}}</h1>
             <span class="subheading">{{subTitle}}</span>
+            <router-link :to="{name: 'appointment'}" class="btn btn-danger mt-4"> Solicita programare </router-link>
           </div>
         </div>
       </div>

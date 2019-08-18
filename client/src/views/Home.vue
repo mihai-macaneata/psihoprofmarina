@@ -73,9 +73,6 @@ export default {
       return this.$store.state.articlesPreview && this.$store.state.articlesPreview.filter(a => a.service)
     }
   },
-  async beforeCreate() {
-    await this.$store.dispatch('getInitialData')
-  }
 }
 </script>
 
