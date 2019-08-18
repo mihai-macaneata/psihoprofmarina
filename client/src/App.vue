@@ -17,6 +17,9 @@ export default {
     Nav, 
     Header,
     Footer
+  },
+  async beforeCreate() {
+    await this.$store.dispatch('getInitialData')
   }
 }
 </script>

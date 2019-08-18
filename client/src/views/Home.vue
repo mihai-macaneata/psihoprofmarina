@@ -8,12 +8,14 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-10 mx-auto">
+          <h2>Servicii</h2>
+          <hr>
         <div v-for="article in services" :key="article._id" class="post-preview">
    
           <router-link :to="{name: 'article', query: {id: article._id}}">
-            <h2 class="post-title">
+            <h3 class="mt-4">
               {{article.title}}
-            </h2>
+            </h3>
             <img :src="`${$store.state.apiURL}${article.cover.url}`" alt="">
             <h3 class="post-subtitle">
               {{article.slug}}
@@ -27,12 +29,14 @@
         </div>
       </div>
       <div class="col-lg-8 col-md-10 mx-auto">
+          <h2>Articole</h2>
+        <hr>
         <div v-for="article in articles" :key="article._id" class="post-preview">
    
           <router-link :to="{name: 'article', query: {id: article._id}}">
-            <h2 class="post-title">
+            <h3 class="mt-4">
               {{article.title}}
-            </h2>
+            </h3>
             <img :src="`${$store.state.apiURL}${article.cover.url}`" alt="">
             <h3 class="post-subtitle">
               {{article.slug}}
@@ -69,12 +73,16 @@ export default {
       return this.$store.state.articlesPreview && this.$store.state.articlesPreview.filter(a => a.service)
     }
   },
-  async created() {
+  async beforeCreate() {
     await this.$store.dispatch('getInitialData')
   }
 }
 </script>
 
 <style scoped lang="scss">
-
+.post-preview {
+  img {
+    max-width: 100%;
+  }
+}
 </style>

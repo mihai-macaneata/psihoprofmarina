@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import './assets/scss/clean-blog.scss'
 
+var SocialSharing = require('vue-social-sharing');
+Vue.use(SocialSharing);
 
 Vue.config.productionTip = false
 

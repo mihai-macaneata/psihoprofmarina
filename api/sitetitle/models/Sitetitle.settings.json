@@ -1,15 +1,21 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "sitetitle",
   "info": {
     "name": "sitetitle",
     "description": ""
   },
   "options": {
-    "timestamps": true
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
   },
   "attributes": {
     "title": {
+      "type": "string"
+    },
+    "subtitle": {
       "type": "string"
     }
   }

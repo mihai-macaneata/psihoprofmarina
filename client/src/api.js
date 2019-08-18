@@ -62,10 +62,13 @@ const getSiteTitle = () => fetch('sitetitles/')
 
 const getCurrentArticle = (id) => fetch(`articles/${id}`)
 
+const getHeaderImage = () => fetch('headerimages/')
+
 
 export {
   getArticles,
   getSiteTitle,
   getCurrentArticle,
-  apiURL
+  apiURL,
+  getHeaderImage
 }
