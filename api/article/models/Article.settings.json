@@ -31,6 +31,9 @@
     },
     "author": {
       "model": "author"
+    },
+    "service": {
+      "type": "boolean"
     }
   }
 }
