@@ -29,6 +29,9 @@
     },
     "date_created": {
       "type": "date"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
