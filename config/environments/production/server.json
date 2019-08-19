@@ -3,15 +3,12 @@
   "port": 1337,
   "production": true,
   "proxy": {
-    "enabled": true
+    "enabled": false
   },
   "cron": {
     "enabled": false
   },
   "admin": {
-    "path": "/dashboard",
-    "build": {
-      "backend": "/strapi"
-    }
+    "autoOpen": false
   }
 }
