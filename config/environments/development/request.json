@@ -22,8 +22,5 @@
   "parser": {
     "enabled": true,
     "multipart": true
-  },
-  "router": {
-    "prefix": "api"
   }
 }
