@@ -10,6 +10,8 @@
   },
   "admin": {
     "path": "/dashboard",
-    "backend": "/api"
+    "build": {
+      "backend": "/strapi"
+    }
   }
 }
