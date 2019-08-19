@@ -9,9 +9,6 @@
     "enabled": false
   },
   "admin": {
-    "autoOpen": false,
-    "build": {
-      "path": "/dashboard"
-    }
+    "autoOpen": false
   }
 }
