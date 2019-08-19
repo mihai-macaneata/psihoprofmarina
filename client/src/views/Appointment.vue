@@ -50,7 +50,7 @@
         </div>
 
       
-        <vue-recaptcha class="text-center" sitekey="fass">
+        <vue-recaptcha class="text-center" sitekey="6LdDtLMUAAAAAOcgmkRQ0mklOeasX7KpKTqMtXUR">
                 <button @click="validate" class="btn btn-primary">Trimite cererea</button>
         </vue-recaptcha>
 
