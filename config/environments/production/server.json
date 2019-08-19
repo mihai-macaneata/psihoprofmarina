@@ -1,5 +1,5 @@
 {
-  "host": "psihoprofmarina.ro",
+  "host": "api.psihoprofmarina.ro",
   "port": 1337,
   "production": true,
   "proxy": {
