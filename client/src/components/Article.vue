@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <div v-html="article.content"></div>
+          <vue-markdown>{{article.content}}</vue-markdown>
           <hr>
             <social-sharing 
               class="text-center" 
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import VueMarkdown from 'vue-markdown'
 
 
 export default {
@@ -41,6 +42,9 @@ export default {
     return {
       // article: ,
     }
+  },
+  components: {
+    VueMarkdown
   },
   computed: {
     article() {
