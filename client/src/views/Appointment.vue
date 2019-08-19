@@ -50,8 +50,15 @@
         </div>
 
       
-        <vue-recaptcha class="text-center" :loadRecaptchaScript="true" sitekey="6LdDtLMUAAAAAOcgmkRQ0mklOeasX7KpKTqMtXUR">
-                <button @click="validate" class="btn btn-primary">Trimite cererea</button>
+        <vue-recaptcha 
+            class="text-center" 
+            :loadRecaptchaScript="true" 
+            sitekey="6LdDtLMUAAAAAOcgmkRQ0mklOeasX7KpKTqMtXUR"
+            @verify="onVerify"
+            @expired="onExpired"
+            ref="recapcha"
+        >
+                <button class="btn btn-primary">Trimite cererea</button>
         </vue-recaptcha>
 
 
@@ -77,6 +84,16 @@ export default {
         }
     },
     methods: {
+        executeRecapcha() {
+            this.$refs.recapcha.execute()
+        },
+        onVerify: function (response) {
+            console.log('Verify: ' + response)
+            this.validate()
+        },
+        onExpired: function () {
+            console.log('Expired')
+        },
         validate() {
             const valid = Object.values(this.appo).every(item => item)
             if (valid) {
