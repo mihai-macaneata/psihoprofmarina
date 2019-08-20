@@ -16,10 +16,10 @@
             <h3 class="mt-4">
               {{article.title}}
             </h3>
-            <img :src="`${$store.state.apiURL}${article.cover.url}`" alt="">
-            <h3 class="post-subtitle">
+            <img v-if="article.cover" :src="`${$store.state.apiURL}${article.cover.url}`" alt="">
+            <p class="post-subtitle">
               {{article.slug}}
-            </h3>
+            </p>
           </router-link>
           <!-- <p class="post-meta">Postat de
             <a href="#">{{article.author.authorName}}</a>
@@ -37,10 +37,10 @@
             <h3 class="mt-4">
               {{article.title}}
             </h3>
-            <img :src="`${$store.state.apiURL}${article.cover.url}`" alt="">
-            <h3 class="post-subtitle">
+            <img  v-if="article.cover"  :src="`${$store.state.apiURL}${article.cover.url}`" alt="">
+            <p class="post-subtitle">
               {{article.slug}}
-            </h3>
+            </p>
           </router-link>
           <p class="post-meta">Postat de
             <a href="#">{{article.author.authorName}}</a>
