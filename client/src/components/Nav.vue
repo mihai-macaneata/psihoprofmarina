@@ -9,7 +9,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <router-link class="nav-link" :to="{name: 'home'}">home</router-link>
+            <router-link class="nav-link" :to="{name: 'home'}">Acasa</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" :to="{name: 'despremine'}">Despre mine</router-link>
           </li>
         </ul>
       </div>
