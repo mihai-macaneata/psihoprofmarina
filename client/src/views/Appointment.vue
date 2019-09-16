@@ -1,5 +1,5 @@
 <template>
-<div class="appointment-wrapper">
+<div id="appointment" class="appointment-wrapper">
 
     <div class="container">
         <h3>Fa o programare</h3>

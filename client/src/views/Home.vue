@@ -52,7 +52,6 @@
                     <div class="col-md-12">
                         <h1 class="text-center">{{siteTitle}}</h1>
                         <div class="logo">
-                            <h1 class="text-center">logo</h1>
                             <!-- <router-link :to="{name: 'home'}"><img :src="computeHeadeRImage" alt=""></router-link> -->
                         </div><!-- end logo -->
                     </div>
@@ -61,92 +60,65 @@
         </div><!-- end header -->
 
         <section class="site-section">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
+                  <div class="col-lg-2">
+                      <h3>Servicii</h3>
+                      <div v-for="article in services" :key="article._id"  class="small-blog-box blog-box clearfix">
+
+                          <div class="blog-desc">
+                              <!-- <span class="cat-title">{{article.title}}</span> -->
+                                  <router-link :to="{name: 'article', query: {id: article._id}}">{{article.title}}
+                                  </router-link>
+                              <!-- end meta -->
+
+                          </div><!-- end desc -->
+                      </div><!-- end blog-box -->
+
+                            <div class="widget mt-4">
+                                <div class="widget-title">
+                                    <h3><span>Categorii articole</span></h3>
+                                </div><!-- end widget-title -->
+                
+                                <div class="category-widget">
+                                    <ul>
+                                        <li v-for="category in categories"><a href="#">{{category.nume}}</a></li>
+                                    </ul>
+                                </div><!-- end category -->
+                            </div><!-- end widget -->
+
+                  </div>
                     <div class="content col-lg-8">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                <h3>Servicii</h3>
-                                <div v-for="article in services" :key="article._id"  class="small-blog-box blog-box clearfix">
-
-                                    <div class="blog-desc">
-                                        <!-- <span class="cat-title">{{article.title}}</span> -->
-                                        <h4>
-                                            <router-link :to="{name: 'article', query: {id: article._id}}">{{article.title}}
-                                            </router-link>
-                                        </h4>
-                                        <!-- end meta -->
-
-                                        <p>{{article.slug}}</p>
-
-                                        <div class="post-bottom clearfix">
-                                            <div class="pull-left">
-                                                <router-link class="readmore" :to="{name: 'article', query: {id: article._id}}">Citeste articolul</router-link>
-                                            </div><!-- end left -->
-
-                                            <div class="pull-right">
-                                                <div class="post-share">
-                                                    <div class="customshare">
-                                                         <span class="list">
-                                                            <strong><i class="fa fa-share-alt"></i>
-                                                            <a href="#" class="tw"><i class="fa fa-twitter"></i></a>
-                                                            <a href="#" class="fb"><i class="fa fa-facebook"></i></a>
-                                                            <a href="#" class="gp"><i class="fa fa-google-plus"></i></a>
-                                                            </strong>
-                                                        </span>
-                                                    </div>
-                                                </div><!-- end share -->
-                                            </div><!-- end right -->
-                                        </div><!-- end bottom -->
-                                    </div><!-- end desc -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
-
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                 <h3>Articole</h3>
-                                 <div v-for="article in articles" :key="article._id"  class="small-blog-box blog-box clearfix">
-                                    <div class="blog-media">
-                                        <router-link :to="{name: 'article', query: {id: article._id}}">
-                                            <img  v-if="article.cover" class="img-fluid" :src="`${$store.state.apiURL}${article.cover.url}`" alt="">
-                                        </router-link>
-                                    </div>
-                                    <div class="blog-desc">
-                                        <span v-if="article.category" class="cat-title">{{article.category.nume}}</span>
-                                        <h4>
-                                            <router-link :to="{name: 'article', query: {id: article._id}}">{{article.title}}
-                                            </router-link>
-                                        </h4>
-                                        <!-- end meta -->
-                                       
+                      <b-row v-masonry="containerId" transition-duration="0.3s" item-selector=".item">
+                        <b-col v-masonry-tile class="item mb-4" lg="4" v-for="article in articles" :key="article._id">
+                          <b-card 
+                          >
+                            <!-- :img-src="`${article.cover ? $store.state.apiURL + article.cover.url : ''}`" -->
+                          <router-link class="card-link" :to="{name: 'article', query: {id: article._id}}">
+                            <div v-if="article.cover" class="blog-media mb-3">
+                                <router-link class="article-preview-image" :to="{name: 'article', query: {id: article._id}}">
+                                    
+                                    <div class="article-preview-bg" :style="`background-image: url(${$store.state.apiURL}${article.cover.url})`"></div>
+                                    <!-- <img  v-if="article.cover" class="img-fluid" :src="`${$store.state.apiURL}${article.cover.url}`" alt=""> -->
+                                </router-link>
+                            </div>
+                            <h4>{{article.title}}</h4>
+                            <div class="blog-desc">
+                                    <b-badge v-if="article.category" class="cat-title">{{article.category.nume}}</b-badge>
+                                
+                                <!-- end meta -->
+                                
 
-                                        <p>{{article.slug}}</p>
-
-                                        <div class="post-bottom clearfix">
-                                            <div class="pull-left">
-                                                <router-link class="readmore" :to="{name: 'article', query: {id: article._id}}">Citeste articolul</router-link>
-                                            </div><!-- end left -->
-
-                                            <div class="pull-right">
-                                                <div class="post-share">
-                                                    <div class="customshare">
-                                                         <span class="list">
-                                                            <strong><i class="fa fa-share-alt"></i>
-                                                            <a href="#" class="tw"><i class="fa fa-twitter"></i></a>
-                                                            <a href="#" class="fb"><i class="fa fa-facebook"></i></a>
-                                                            <a href="#" class="gp"><i class="fa fa-google-plus"></i></a>
-                                                            </strong>
-                                                        </span>
-                                                    </div>
-                                                </div><!-- end share -->
-                                            </div><!-- end right -->
-                                        </div><!-- end bottom -->
-                                    </div><!-- end desc -->
-                                </div><!-- end blog-box -->
-                            </div><!-- end col -->
-                        </div><!-- end row -->
+                                <p class="article-preview-text">{{article.slug}}</p>
+                              </div><!-- end desc -->
+                              </router-link>
+                            </b-card><!-- end blog-box -->
+                          </b-col>
+                        </b-row>
                     </div><!-- end col -->
 
-                    <div class="sidebar col-lg-4">
+                    <div class="sidebar col-lg-2">
                         <div class="widget clearfix">
                             <div class="widget-title">
                                 <h3><span>Despre mine</span></h3>
@@ -205,18 +177,6 @@
                                 </div>
                             </div> -->
                 
-                            <div class="widget clearfix">
-                                <div class="widget-title">
-                                    <h3><span>Categorii articole</span></h3>
-                                </div><!-- end widget-title -->
-                
-                                <div class="category-widget">
-                                    <ul>
-                                        <li v-for="category in categories"><a href="#">{{category.nume}}</a></li>
-                                    </ul>
-                                </div><!-- end category -->
-                            </div><!-- end widget -->
-
 
                     </div><!-- end sidebar -->
                 </div><!-- end row -->
