@@ -111,7 +111,7 @@
                                         </router-link>
                                     </div>
                                     <div class="blog-desc">
-                                        <span class="cat-title">{{article.category.nume}}</span>
+                                        <span v-if="article.category" class="cat-title">{{article.category.nume}}</span>
                                         <h4>
                                             <router-link :to="{name: 'article', query: {id: article._id}}">{{article.title}}
                                             </router-link>
