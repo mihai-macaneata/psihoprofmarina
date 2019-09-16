@@ -34,6 +34,9 @@
     },
     "service": {
       "type": "boolean"
+    },
+    "category": {
+      "model": "category"
     }
   }
 }

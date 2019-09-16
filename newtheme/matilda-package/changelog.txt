@@ -1,0 +1,4 @@
+*** Changelog - Matilda Website Template ***
+
+2017.07.07 - version 1.0
+	* First release!

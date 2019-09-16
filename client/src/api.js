@@ -58,6 +58,8 @@ const remove = (path) => {
 
 const getArticles = () => fetch('articles/')
 
+const getCategories = () => fetch('categories/')
+
 const getSiteTitle = () => fetch('sitetitles/')
 
 const getCurrentArticle = (id) => fetch(`articles/${id}`)
@@ -72,5 +74,6 @@ export {
   getCurrentArticle,
   apiURL,
   getHeaderImage,
-  createAppointment
+  createAppointment,
+  getCategories
 }

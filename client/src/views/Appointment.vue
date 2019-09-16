@@ -1,5 +1,9 @@
 <template>
+<div class="appointment-wrapper">
+
     <div class="container">
+        <h3>Fa o programare</h3>
+        <br>
         <div v-if="show_alert">
             <h3 class="badge danger">Toate campurile sunt obligatorii</h3>
         </div>
@@ -63,6 +67,8 @@
 
 
     </div>
+</div>
+
 </template>
 
 <script>

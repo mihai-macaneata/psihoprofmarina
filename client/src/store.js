@@ -6,7 +6,8 @@ import {
   getCurrentArticle,
   apiURL,
   getHeaderImage,
-  createAppointment
+  createAppointment,
+  getCategories
 } from '@/api'
 
 Vue.use(Vuex)
@@ -18,7 +19,8 @@ export default new Vuex.Store({
     siteTitle: null,
     apiURL,
     headerImage: null,
-    siteSubtitle: null
+    siteSubtitle: null,
+    categories: null
   },
   mutations: {
     setArticlesPreview(state, data) {
@@ -35,14 +37,19 @@ export default new Vuex.Store({
     },
     setHeaderImage(state, data) {
       state.headerImage = data
+    },
+    setCategories(state, data) {
+      state.categories = data
     }
   },
   actions: {
     async getInitialData(context){
       const siteTitle = await getSiteTitle()
       const articles = await getArticles()
+      const categories = await getCategories()
       const headerImage = await getHeaderImage()
       context.commit('setArticlesPreview', articles.data)
+      context.commit('setCategories', categories.data)
       context.commit('setSiteTitle', siteTitle.data[0].title)
       context.commit('setSiteSubtitle', siteTitle.data[0].subtitle)
       context.commit('setHeaderImage', `${apiURL}${headerImage.data[0].image.url}`)

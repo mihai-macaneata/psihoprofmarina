@@ -1,22 +1,21 @@
 <template>
-  <div id="app">
+  <div id="wrapper">
     <Nav></Nav>
-    <Header></Header>
     <router-view/>
+    <Appointment></Appointment>
     <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Nav from '@/components/Nav'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-
+import Appointment from '@/views/Appointment.vue'
 export default {
   components: {
     Nav, 
-    Header,
-    Footer
+    Footer,
+    Appointment
   },
   async beforeCreate() {
     await this.$store.dispatch('getInitialData')
