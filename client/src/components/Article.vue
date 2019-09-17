@@ -1,5 +1,20 @@
 <template>
-   <article v-if="article" >
+   <article class="inner article" v-if="article" >
+    <!-- <header id="header">
+      <router-link :to="{name: 'home'}" class="logo">LOGO</router-link>
+      <ul class="icons">
+        <li>
+          <a href="#" class="icon brands fa-facebook-f">
+            <span class="label">Facebook</span>
+          </a>
+        </li>
+      </ul>
+    </header> -->
+    <div  v-if="article.cover"  class="article-header-image">
+      <div class="article-header-image-bg" :style="`background-image:url(${article.cover.url})`">
+        <h1>{{article.title}}</h1>
+      </div>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
