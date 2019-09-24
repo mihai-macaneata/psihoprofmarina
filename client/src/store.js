@@ -61,6 +61,7 @@ export default new Vuex.Store({
       }
       context.commit('setCurrentArticle', currentArticle.data)
       // context.commit('setHeaderImage', `${apiURL}${currentArticle.data.cover.url}`)
+      return currentArticle.data
     },
     async createAppointment(context, appointment) {
       const appo = await createAppointment(appointment)

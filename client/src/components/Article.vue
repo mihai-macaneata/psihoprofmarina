@@ -70,14 +70,12 @@ export default {
     }
   },
   async created() {
-    await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
-    this.article = this.$store.state.currentArticle
+    this.article = await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
   },
   watch: {
     '$route.query.id': {
       async handler() {
-        await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
-        this.article = this.$store.state.currentArticle
+        this.article = await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
       }
     }
   }
