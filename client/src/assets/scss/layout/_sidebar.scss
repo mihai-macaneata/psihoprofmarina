@@ -81,7 +81,7 @@
 				width: calc(100% + #{$pad * 2});
 			}
 		}
-
+		
 		.toggle {
 			@include icon(false, solid);
 			@include vendor('transition', 'left 0.5s ease');
@@ -89,7 +89,7 @@
 			border: 0;
 			display: block;
 			height: 7.5em;
-			left: _size(sidebar-width);
+			// left: _size(sidebar-width);
 			line-height: 7.5em;
 			outline: 0;
 			overflow: hidden;
@@ -99,7 +99,8 @@
 			top: 0;
 			width: 6em;
 			z-index: _misc(z-index-base);
-
+			right: 0;
+			transition: right 200ms;
 			&:before {
 				content: '\f0c9';
 				font-size: 2rem;
@@ -115,6 +116,9 @@
 
 		&.inactive {
 			margin-left: (_size(sidebar-width) * -1);
+			.toggle {
+				right: -100px;
+			}
 		}
 
 		@include breakpoint('<=xlarge') {
@@ -150,7 +154,8 @@
 			}
 		}
 
-		@include breakpoint('<=large') {
+		@media(max-width: 950px) {
+
 			box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
 			height: 100%;
 			left: 0;
@@ -198,25 +203,6 @@
 			.toggle {
 				text-indent: 7.25em;
 				width: 7.25em;
-
-				&:before {
-					color: _palette(fg);
-					margin-left: (-0.125em / 2);
-					margin-top: (-0.5em / 2);
-					font-size: 1.1rem;
-					z-index: 1;
-				}
-
-				&:after {
-					background: transparentize(lighten(_palette(fg), 35), 0.25);
-					border-radius: _size(border-radius);
-					content: '';
-					height: 3.5em;
-					left: 1em;
-					position: absolute;
-					top: 1em;
-					width: 5em;
-				}
 			}
 		}
 	}

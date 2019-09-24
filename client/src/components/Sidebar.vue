@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar">
+  <div :class="{inactive: inactive}" id="sidebar">
     <div class="inner">
       <!-- Menu -->
       <nav id="menu">
@@ -85,10 +85,24 @@
         <a href="https://www.freepik.com/free-photos-vectors/logo">Logo vector created by freepik - www.freepik.com</a>
       </footer>
     </div>
+    <a href="#" @click="inactive = !inactive" class="toggle">Toggle</a>
   </div>
 </template>
 <script>
 export default {
+  data(){
+    return {
+      inactive: false
+    }
+  },
+  mounted(){
+    if(window.matchMedia('(max-width: 950px)').matches) {
+      console.log('herere')
+      this.inactive = true
+    }
+
+    console.log(window.matchMedia('(max-width: 950px)'))
+  },
 	computed: {
 		categories() {
         	return this.$store.state.categories

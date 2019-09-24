@@ -42,6 +42,14 @@
 			padding-top: 5em;
 		}
 
+		@media(max-width: 950px) {
+			.logo {
+				right: unset;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+
 		@include breakpoint('<=small') {
 			padding-top: 6.5em;
 

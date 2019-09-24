@@ -13,6 +13,9 @@
 		h1 {
 			margin-top: -0.125em;
 		}
+		@media(max-width: 950px) {
+			padding-top: 5rem!important;
+		}
 
 		.content {
 			@include vendor('flex-grow', '1');
@@ -33,10 +36,10 @@
 				-webkit-object-fit: cover;
 				-ms-object-fit: cover;
 				object-fit: cover;
-				-moz-object-position: center;
-				-webkit-object-position: center;
-				-ms-object-position: center;
-				object-position: center;
+				-moz-object-position: top;
+				-webkit-object-position: top;
+				-ms-object-position: top;
+				object-position: top;
 				width: 100%;
 				max-height: 500px;
 			}
