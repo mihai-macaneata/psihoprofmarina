@@ -16,8 +16,8 @@
     <section id="banner">
       <div class="content">
         <header>
-          <h1>{{siteTitle}}</h1>
-          <p>{{siteSubtitle}}</p>
+          <h2>{{siteTitle}}</h2>
+          <h3>{{subTitle}}</h3>
         </header>
         <ul class="text-left">
           <li>Membru in Colegiul Psihologilor din Romania</li>
