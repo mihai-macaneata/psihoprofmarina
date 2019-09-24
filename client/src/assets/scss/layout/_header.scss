@@ -22,6 +22,13 @@
 			color: inherit;
 			font-family: _font(family-heading);
 			font-size: 1.125em;
+			position: absolute;
+			top: -10px;
+			width: 200px;
+			left: -39px;
+			img {
+				width: 100%;
+			}
 		}
 
 		.icons {

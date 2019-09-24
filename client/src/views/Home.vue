@@ -2,7 +2,9 @@
   <div class="inner">
     <!-- Header -->
     <header id="header">
-      <router-link :to="{name: 'home'}" class="logo">LOGO</router-link>
+      <router-link :to="{name: 'home'}" class="logo">
+        <img src="@/assets/logo.svg" alt="">
+      </router-link>
       <ul class="icons">
         <li>
           <a href="#" class="icon brands fa-facebook-f">

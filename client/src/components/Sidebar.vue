@@ -78,10 +78,11 @@
       <!-- Footer -->
       <footer id="footer">
         <p class="copyright">
-          &copy; Untitled. All rights reserved. Demo Images:
-          <a href="https://unsplash.com">Unsplash</a>. Design:
+          &copy; Psihoprofmarina. All rights reserved.
+          Design:
           <a href="https://html5up.net">HTML5 UP</a>.
         </p>
+        <a href="https://www.freepik.com/free-photos-vectors/logo">Logo vector created by freepik - www.freepik.com</a>
       </footer>
     </div>
   </div>
