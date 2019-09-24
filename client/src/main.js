@@ -7,7 +7,12 @@ import store from './store'
 
 // Vue.use(VueMasonryPlugin)
 
+import VueMeta from 'vue-meta'
 
+Vue.use(VueMeta, {
+  // optional pluginOptions
+  refreshOnceOnNavigation: true
+})
 
 // Vue.use(BootstrapVue)
 

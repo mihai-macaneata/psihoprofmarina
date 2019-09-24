@@ -61,6 +61,10 @@ export default {
   components: {
     VueMarkdown
   },
+     metaInfo: {
+      // all titles will be injected into this template
+      titleTemplate: null
+    },
   computed: {
     // article() {
     //   return this.$store.state.currentArticle
@@ -70,6 +74,7 @@ export default {
     }
   },
   async created() {
+    console.log(this.metaInfo)
     this.article = await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
   },
   watch: {

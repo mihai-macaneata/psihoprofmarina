@@ -15,6 +15,12 @@ export default {
     Sidebar, 
     Appointment
   },
+   metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      title: 'Marina Lucica',
+      // all titles will be injected into this template
+      titleTemplate: '%s | Marina Lucica'
+  },
   async beforeCreate() {
     await this.$store.dispatch('getInitialData')
   }
