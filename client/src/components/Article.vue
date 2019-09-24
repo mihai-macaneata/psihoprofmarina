@@ -75,6 +75,8 @@ export default {
   watch: {
     '$route.query.id': {
       async handler() {
+        console.log('in watcher')
+        this.article = null
         this.article = await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
       }
     }
