@@ -55,27 +55,29 @@ import VueMarkdown from 'vue-markdown'
 export default {
   data() {
     return {
-      // article: ,
+      article: null,
     }
   },
   components: {
     VueMarkdown
   },
   computed: {
-    article() {
-      return this.$store.state.currentArticle
-    },
+    // article() {
+    //   return this.$store.state.currentArticle
+    // },
     url() {
       return window.location.href
     }
   },
   async created() {
     await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
+    this.article = this.$store.state.currentArticle
   },
   watch: {
     '$route.query.id': {
-      handler() {
-        this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
+      async handler() {
+        await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
+        this.article = this.$store.state.currentArticle
       }
     }
   }
