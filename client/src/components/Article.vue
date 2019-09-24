@@ -72,11 +72,13 @@ export default {
   async created() {
     await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
   },
-  async beforeRouteUpdate (to, from, next) {
-   await this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
-   next()
+  watch: {
+    '$route.query.id': {
+      handler() {
+        this.$store.dispatch('getCurrentArticle', {id: this.$route.query.id})
+      }
+    }
   }
-
 }
 </script>
 
